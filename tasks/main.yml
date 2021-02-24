@@ -1,0 +1,17 @@
+---
+- name: "Install {{ service_name }}"
+  become: yes
+  become_user: root
+  include: install.yml
+
+- name: "Uninstall {{ service_name }}"
+  become: yes
+  become_user: root
+  include: uninstall.yml
+  when: flush_all | bool
+
+- name: "Delete data"
+  become: yes
+  become_user: root
+  include: delete_data.yml
+  when: delete_data | bool

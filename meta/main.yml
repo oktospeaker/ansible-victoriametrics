@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  author: oktospeaker@gmail.com
+  description: "Install/Uninstall victoriametrics service (docker)"
+  company: none
+
+dependencies: []

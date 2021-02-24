@@ -1,0 +1,4 @@
+- name: "Delete {{ service_name }} data directory"
+  file:
+    path: "{{ host_data_dir }}"
+    state: "absent"

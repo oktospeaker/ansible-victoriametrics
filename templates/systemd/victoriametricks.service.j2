@@ -1,0 +1,22 @@
+[Unit]
+Description=victoriametrics service docker container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStartPre=-/usr/bin/docker rm {{ service_name }}
+ExecStart=/usr/bin/docker run \
+        --rm \
+        -d \
+        -p {{ host_port }}:{{ container_port }}/{{ port_type }} \
+        --user {{ user_name_uid }} \
+        --name {{ service_name }} \
+        --hostname {{ service_name }} \
+        -v {{ host_data_dir }}:{{ container_data_dir }} \
+        {{ docker_image }} \
+        -dedup.minScrapeInterval={{ dedup.minScrapeInterval }}
+ExecStop=/usr/bin/docker stop -t 1 {{ service_name }}
+
+[Install]
+WantedBy=multi-user.target
