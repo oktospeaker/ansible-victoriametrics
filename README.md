@@ -16,7 +16,7 @@ host_port                       |       8428                                |   
 container_port                  |       8428                                |   Container port
 port_type                       |       tcp                                 |   Port type
 docker_image                    |       victoriametrics/victoria-metrics    |   Docker image
-dedup.minScrapeInterval         |       60s                                 |   Deduplication option (see https://github.com/VictoriaMetrics/VictoriaMetrics#deduplication)
+interval                        |       60s                                 |   Deduplication option (see https://github.com/VictoriaMetrics/VictoriaMetrics#deduplication)
 
 ### How to use
     - installation: just start the role

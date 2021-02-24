@@ -11,4 +11,4 @@ host_port: 8428
 container_port: 8428
 port_type: tcp
 docker_image: victoriametrics/victoria-metrics
-dedup.minScrapeInterval: 60s
+interval: 60s
