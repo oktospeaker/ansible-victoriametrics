@@ -8,7 +8,6 @@ Restart=always
 ExecStartPre=-/usr/bin/docker rm {{ service_name }}
 ExecStart=/usr/bin/docker run \
         --rm \
-        -d \
         -p {{ host_port }}:{{ container_port }}/{{ port_type }} \
         --user {{ user_name_uid }} \
         --name {{ service_name }} \
