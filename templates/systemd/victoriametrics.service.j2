@@ -14,7 +14,8 @@ ExecStart=/usr/bin/docker run \
         --hostname {{ service_name }} \
         -v {{ host_data_dir }}:{{ container_data_dir }} \
         {{ docker_image }} \
-        -dedup.minScrapeInterval={{ interval }}
+        -dedup.minScrapeInterval={{ interval }} \
+        -retentionPeriod={{ period }}
 ExecStop=/usr/bin/docker stop -t 1 {{ service_name }}
 
 [Install]

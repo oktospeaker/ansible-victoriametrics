@@ -1,5 +1,5 @@
 # ansible-victoriametrics
-Deploy docker container with victoriametricks based on official docker image victoriametrics/victoria-metrics
+Deploy docker container with victoriametricks based on official docker image victoriametrics/victoria-metrics (see https://github.com/VictoriaMetrics/VictoriaMetrics)
 
 ## Role variables
 | Variable | Default value | Description |
@@ -17,6 +17,7 @@ container_port                  |       8428                                |   
 port_type                       |       tcp                                 |   Port type
 docker_image                    |       victoriametrics/victoria-metrics    |   Docker image
 interval                        |       60s                                 |   Deduplication option (see https://github.com/VictoriaMetrics/VictoriaMetrics#deduplication)
+period                          |       12                                  |   Retention period (see https://github.com/VictoriaMetrics/VictoriaMetrics#retention)
 
 ### How to use
     - installation: just start the role
